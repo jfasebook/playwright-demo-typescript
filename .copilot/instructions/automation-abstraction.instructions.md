@@ -12,7 +12,10 @@ Eres un experto en QA Automation siguiendo el patrón de desacoplamiento de herr
 ## Desacoplamiento mediante Alias de Espacios
 Para evitar el acoplamiento a la estructura física de archivos y facilitar refactorizaciones, **es obligatorio el uso de alias de prefijo `#`** para todos los imports dirigidos a espacios o capas lógicas definidas en el proyecto. 
 
-Actualmente, esto aplica a la capa framework mediante el alias `#framework/*`, pero esta regla se extiende a cualquier nuevo espacio que se defina (ej. `#data/*`, `#utils/*`, etc.).
+Actualmente, esto aplica a:
+- Capa framework: `#framework/*`
+- Capa de soporte (Page Objects, Steps, Data, Engine extensions): `#support/*`
+- Capa de pruebas (specs y features): `#tests/*`
 
 **Esta regla es de cumplimiento estricto para cualquier código o snippet que generes**, asegurando que nunca se utilicen rutas relativas hacia carpetas que tengan un alias definido.
 
@@ -31,14 +34,17 @@ Todas las interacciones con el navegador y el ciclo de vida de las pruebas deben
 5.  **Capa de Dominio/Páginas (`framework/pages`)**: Clases que heredan de `BasePage`. Representan una vista completa y pueden contener instancias de uno o varios componentes.
 6.  **Capa de App Object (`framework/app`)**: Punto de entrada centralizado (`TestApp`) que orquesta páginas, componentes y flujos de negocio.
 7.  **Capa de Flujos de Negocio (`framework/flows`)**: Clases que heredan de `BaseFlow`. Agrupan secuencias de acciones (orquestación) para evitar duplicidad de lógica compleja en los tests.
-8.  **Capa de Datos de Prueba (`tests/data`, `tests/builders`, `tests/factories`)**: 
+8.  **Capa de Datos de Prueba (`support/data`, `support/builders`, `support/factories`)**: 
     *   **Data Models**: Interfaces o tipos que definen la estructura de los datos.
     *   **Builders**: Clases para construir datos de forma fluida y parametrizada.
     *   **Factories**: Punto de entrada centralizado para obtener datos preconfigurados.
-9.  **Capa de Tests (`tests/`)**: Archivos `.spec.ts` que:
-    *   Importan `test` y `expect` desde `#framework/engine/TestRunner`.
+9.  **Capa de Tests (`tests/`)**: Contiene exclusivamente la definición de las pruebas.
+    *   `specs/`: Archivos `.spec.ts` que importan `test` y `expect` desde `#framework/engine/TestRunner`.
+    *   `features/`: Archivos `.feature` (Gherkin).
     *   **Utilizan fixtures como `app`, `logger` y `data`** inyectados directamente en el test.
 10. **Capa de Configuración (`framework/config`)**: Abstrae la configuración técnica. La personalización se realiza en el archivo `framework.config.ts` de la raíz, evitando modificar el puente técnico `playwright.config.ts`.
+11. **Capa de Soporte de Tests (`support/`)**: Alberga las abstracciones específicas del dominio (ahora separadas de `tests/` para mayor claridad).
+    *   Contiene `pages/`, `components/`, `flows/`, `steps/`, `engine/` (extensiones específicas), etc.
 
 ## Patrones de Diseño Obligatorios
 

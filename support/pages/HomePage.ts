@@ -1,7 +1,7 @@
 import { BasePage } from '#framework/pages/BasePage';
-import { MenuComponent } from '#tests/components/MenuComponent';
-import { HeroComponent } from '#tests/components/HeroComponent';
-import { FooterComponent } from '#tests/components/FooterComponent';
+import { MenuComponent } from '#support/components/MenuComponent';
+import { HeroComponent } from '#support/components/HeroComponent';
+import { FooterComponent } from '#support/components/FooterComponent';
 import { IDriver } from '#framework/engine/interfaces/IDriver';
 
 export class HomePage extends BasePage {

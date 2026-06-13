@@ -1,5 +1,5 @@
-import { PageData } from '#tests/data/Pages';
-import { TestApp } from '#tests/app/TestApp';
+import { PageData } from '#support/data/Pages';
+import { TestApp } from '#support/app/TestApp';
 
 export class PageDataBuilder {
     private nombre: string = '';

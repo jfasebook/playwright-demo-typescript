@@ -1,5 +1,5 @@
-import { PageDataFactory } from '#tests/factories/PageDataFactory';
-import { ProductDataFactory } from '#tests/factories/ProductDataFactory';
+import { PageDataFactory } from '#support/factories/PageDataFactory';
+import { ProductDataFactory } from '#support/factories/ProductDataFactory';
 
 export class TestDataFactory {
     private readonly pageFactory = new PageDataFactory();

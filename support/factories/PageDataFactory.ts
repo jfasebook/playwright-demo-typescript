@@ -1,5 +1,5 @@
-import { PageDataBuilder } from '#tests/builders/PageDataBuilder';
-import { PageData } from '#tests/data/Pages';
+import { PageDataBuilder } from '#support/builders/PageDataBuilder';
+import { PageData } from '#support/data/Pages';
 
 export class PageDataFactory {
     public get paginas() {

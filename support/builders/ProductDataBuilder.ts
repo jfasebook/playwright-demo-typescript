@@ -1,4 +1,4 @@
-import { ProductData } from '#tests/data/Products';
+import { ProductData } from '#support/data/Products';
 
 export class ProductDataBuilder {
     private nombre: string = 'Producto genérico';

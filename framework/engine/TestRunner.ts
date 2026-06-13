@@ -1,4 +1,5 @@
 import { test as base, expect, Page } from '@playwright/test';
+import { test as bddBase } from 'playwright-bdd';
 import { IDriver } from '#framework/engine/interfaces/IDriver';
 import { EngineFactory } from '#framework/engine/EngineFactory';
 import { Logger } from '#framework/logger/Logger';
@@ -16,7 +17,7 @@ export type FrameworkFixtures = {
  * Inyectamos automáticamente el driver para que esté disponible en 
  * cualquier test o fixture que lo necesite.
  */
-export const test = base.extend<FrameworkFixtures>({
+export const test = bddBase.extend<FrameworkFixtures>({
     driver: async ({ page }, use) => {
         const driver = EngineFactory.createDriver(page);
         await use(driver);

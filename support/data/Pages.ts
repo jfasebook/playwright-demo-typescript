@@ -1,4 +1,4 @@
-import { TestApp } from '#tests/app/TestApp';
+import { TestApp } from '#support/app/TestApp';
 
 export type PageData = {
     nombre: string;

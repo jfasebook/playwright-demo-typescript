@@ -1,7 +1,7 @@
 import { IDriver } from '#framework/engine/interfaces/IDriver';
-import { PageFactory } from '#tests/factories/PageFactory';
-import { MenuComponent } from '#tests/components/MenuComponent';
-import { ProductFlows } from '#tests/flows/ProductFlows';
+import { PageFactory } from '#support/factories/PageFactory';
+import { MenuComponent } from '#support/components/MenuComponent';
+import { ProductFlows } from '#support/flows/ProductFlows';
 import { Logger } from '#framework/logger/Logger';
 
 export class TestApp {

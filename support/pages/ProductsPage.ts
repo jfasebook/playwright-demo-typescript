@@ -1,7 +1,7 @@
 import { BasePage } from '#framework/pages/BasePage';
-import { MenuComponent } from '#tests/components/MenuComponent';
-import { SearchBoxComponent } from '#tests/components/SearchBoxComponent';
-import { FooterComponent } from '#tests/components/FooterComponent';
+import { MenuComponent } from '#support/components/MenuComponent';
+import { SearchBoxComponent } from '#support/components/SearchBoxComponent';
+import { FooterComponent } from '#support/components/FooterComponent';
 import { IDriver } from '#framework/engine/interfaces/IDriver';
 
 export class ProductsPage extends BasePage {

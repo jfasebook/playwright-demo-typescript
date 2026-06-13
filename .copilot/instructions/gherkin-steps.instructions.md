@@ -7,11 +7,12 @@ applyTo: "tests/steps/**/*.steps.ts"
 Eres un experto en QA Automation siguiendo el patrón de desacoplamiento y herencia de arquitecturas basadas en App Object Pattern.
 
 ## Reglas de Implementación (Cumplimiento de Abstracción)
-1. **Runner Específico**: Utiliza **SIEMPRE** el decorador `#tests/engine/TestRunnerGherkin` para importar las funciones de Gherkin.
+1. **Runner Específico**: Utiliza **SIEMPRE** el decorador `#support/engine/TestRunnerGherkin` para importar las funciones de Gherkin.
     *   **Prohibido**: `import { Given, ... } from 'playwright-bdd';`
-    *   **Obligatorio**: `import { Given, When, Then } from '#tests/engine/TestRunnerGherkin';`
+    *   **Obligatorio**: `import { Given, When, Then } from '#support/engine/TestRunnerGherkin';`
+    *   **Nota Técnica**: El objeto `test` utilizado en `createBdd(test)` debe descender de `test` de `playwright-bdd`. Esto ya está gestionado en `#framework/engine/TestRunner`.
 2. **Prohibición de Playwright**: Al igual que en los specs, está terminantemente prohibido importar `@playwright/test` directamente para interactuar con el navegador. Todo debe orquestarse a través de la `app`.
-3. **Uso de Aliases (`#`)**: Todos los imports a carpetas del proyecto deben usar su alias correspondiente (`#framework/*`, `#tests/*`).
+3. **Uso de Aliases (`#`)**: Todos los imports a carpetas del proyecto deben usar su alias correspondiente (`#framework/*`, `#support/*`, `#tests/*`).
 
 ## Arquitectura del Step
 1. **Propósito**: El archivo de steps es "pegajoso" (glue code); su única función es mapear las frases de Gherkin a llamadas de la arquitectura de automatización.
@@ -24,7 +25,7 @@ Eres un experto en QA Automation siguiendo el patrón de desacoplamiento y heren
 
 ## Ejemplo de Implementación Correcta
 ```typescript
-import { Given, When, Then } from '#tests/engine/TestRunnerGherkin';
+import { Given, When, Then } from '#support/engine/TestRunnerGherkin';
 import { expect } from '#framework/engine/TestRunner';
 
 When('navega a la sección de productos', async ({ app }) => {

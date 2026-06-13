@@ -1,5 +1,5 @@
-import { ProductDataBuilder } from '#tests/builders/ProductDataBuilder';
-import { ProductData } from '#tests/data/Products';
+import { ProductDataBuilder } from '#support/builders/ProductDataBuilder';
+import { ProductData } from '#support/data/Products';
 
 export class ProductDataFactory {
     public get productos() {

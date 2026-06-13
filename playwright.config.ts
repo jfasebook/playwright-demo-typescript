@@ -5,7 +5,7 @@ import { playwrightBaseConfig } from '#framework/config/playwrightBridge';
 // Configuración de BDD
 const bddConfig = defineBddConfig({
   paths: ['tests/features/*.feature'],
-  importTestFrom: 'tests/engine/TestRunnerGherkin.ts', // Importante para que use nuestro decorador
+  steps: ['support/steps/*.steps.ts', 'support/engine/TestRunnerGherkin.ts'],
   outputDir: '.features-gen',
 });
 

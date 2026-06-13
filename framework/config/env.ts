@@ -5,8 +5,8 @@ import path from 'path';
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 export const env = {
-  BASE_URL: process.env.BASE_URL || 'http://localhost:8080',
-  PORT: process.env.PORT || '8080',
+  BASE_URL: process.env.BASE_URL || 'http://localhost:3000',
+  PORT: process.env.PORT || '3000',
   CI: process.env.CI === 'true',
   TRACE: (process.env.TRACE as any) || 'on-first-retry',
   RETRIES: parseInt(process.env.RETRIES || '0', 10),

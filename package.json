@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "serve web"
+    "setup": "npm install && npx playwright install",
+    "serve": "serve web",
+    "test": "npx playwright test",
+    "test:specs": "npx playwright test --project=specs",
+    "test:gherkin": "npx playwright test --project=gherkin",
+    "test:ui": "npx playwright test --ui",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npx playwright show-report"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +19,7 @@
   "type": "commonjs",
   "imports": {
     "#framework/*": "./framework/*.ts",
+    "#support/*": "./support/*.ts",
     "#tests/*": "./tests/*.ts"
   },
   "devDependencies": {

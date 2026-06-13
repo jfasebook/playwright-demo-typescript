@@ -18,6 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "#framework/*": ["framework/*.ts"],
+      "#support/*": ["support/*.ts"],
       "#tests/*": ["tests/*.ts"]
     },
     
@@ -29,6 +30,8 @@
     "types": ["node"]
   },
   "include": [
+    "framework/**/*.ts",
+    "support/**/*.ts",
     "tests/**/*.ts",
     "playwright.config.ts"
   ],

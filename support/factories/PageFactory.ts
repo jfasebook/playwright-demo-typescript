@@ -1,7 +1,7 @@
 import { IDriver } from '#framework/engine/interfaces/IDriver';
-import { HomePage } from '#tests/pages/HomePage';
-import { ProductsPage } from '#tests/pages/ProductsPage';
-import { ConsejosPage } from '#tests/pages/ConsejosPage';
+import { HomePage } from '#support/pages/HomePage';
+import { ProductsPage } from '#support/pages/ProductsPage';
+import { ConsejosPage } from '#support/pages/ConsejosPage';
 
 export class PageFactory {
     constructor(private readonly driver: IDriver) {}

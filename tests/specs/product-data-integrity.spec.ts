@@ -1,4 +1,4 @@
-import { test, expect } from '#tests/engine/TestRunner';
+import { test, expect } from '#support/engine/TestRunner';
 
 test.describe('Integridad de Datos - Productos', () => {
 

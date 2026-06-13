@@ -1,6 +1,6 @@
 import { test as base, expect } from '#framework/engine/TestRunner';
-import { TestApp } from '#tests/app/TestApp';
-import { TestDataFactory } from '#tests/factories/TestDataFactory';
+import { TestApp } from '#support/app/TestApp';
+import { TestDataFactory } from '#support/factories/TestDataFactory';
 
 /**
  * Fixtures de negocio específicos del proyecto.
