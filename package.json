@@ -17,6 +17,7 @@
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.9.3",
+    "playwright-bdd": "^8.2.0",
     "serve": "^14.2.6",
     "typescript": "^6.0.3"
   },
